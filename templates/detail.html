@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titel %}
+{{contact.name}}
+{% endblock titel %}
+{% block content %}
+
+<!-- Main Section -->
+<div class="container">
+  <h2 class="heading font-weight-light text-center">{{contact.name}}</h2>
+  <hr />
+</div>
+<div class="container main-part">
+  <!-- Card for details -->
+  {% include 'partials/_card.html' %}
+</div>
+<div class="text-center">
+  <a class="btn btn-success px-5" href="{% url 'update' contact.id %}">
+    &nbsp; Update
+  </a>
+  <a class="btn btn-danger px-5" href="{% url 'delete' contact.id %}">
+    &nbsp; Delete
+  </a>
+</div>
+<!-- Main Section ends-->
+{% endblock content %}
